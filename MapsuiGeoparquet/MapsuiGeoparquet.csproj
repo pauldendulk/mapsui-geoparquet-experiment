@@ -50,6 +50,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Data\gemeenten2016_1.0.parquet" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Data\gemeenten2016_1.0.parquet">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="bertt.geoparquet" Version="0.4.0" />
 		<PackageReference Include="Mapsui.Maui" Version="4.0.0-beta.6" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />

@@ -1,4 +1,5 @@
 ﻿using Mapsui.Layers;
+using Mapsui.Providers;
 using Mapsui.Styles;
 using MapsuiGeoparquet.Providers;
 
@@ -24,8 +25,8 @@ public partial class MainPage : ContentPage
 
         return new Layer
         {
-            Style = new VectorStyle(),
-            DataSource = geoParquetProvider
+            Style = new VectorStyle { Fill = new Mapsui.Styles.Brush(Mapsui.Styles.Color.FromArgb(64, 255, 255, 255)), Outline = new Pen(Mapsui.Styles.Color.Black, 3) },
+            DataSource = new ProjectingProvider(geoParquetProvider) { CRS = "EPSG:3857" }
         };
     }
 }
